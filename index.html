@@ -276,5 +276,153 @@
       </svg>
     </div>
   </figure>
+
+  <figure id="scene-adjusted-figure">
+    <figcaption>Adjusted scene (Step 3)</figcaption>
+    <div class="svg-container">
+      <svg
+        id="scene-adjusted"
+        viewBox="0 0 800 500"
+        width="800"
+        height="500"
+        aria-labelledby="svgTitle svgDesc"
+        role="img"
+      >
+        <title id="svgTitle">House and Garden Scene (Adjusted)</title>
+        <desc id="svgDesc">
+          An SVG illustration showing a house and garden with improved balance, contrast, dashed fence, mailbox, stone path, and chimney smoke.
+        </desc>
+        <style>
+          /* Scoped styles for adjusted scene only */
+          #scene-adjusted .high-contrast { stroke: #222; }
+          #scene-adjusted .fence { stroke: #a67c00; stroke-width: 7; stroke-dasharray: 18 10; }
+          #scene-adjusted .grass { fill: #6dbf3a; }
+          #scene-adjusted .sky { fill: #7ec9f7; }
+          #scene-adjusted .house-body { fill: #ffe5b4; stroke-width: 4; }
+          #scene-adjusted .roof { fill: #a80000; stroke-width: 5; }
+          #scene-adjusted .window { fill: #e0f7fa; stroke-width: 3; }
+          #scene-adjusted .door { fill: #bfa16a; stroke-width: 3; }
+          #scene-adjusted .tree-trunk { fill: #7c4a03; }
+          #scene-adjusted .tree-leaves { fill: #228b22; }
+          #scene-adjusted .mailbox-post { fill: #7c4a03; }
+          #scene-adjusted .mailbox-box { fill: #b0c4de; stroke: #222; stroke-width: 2; }
+          #scene-adjusted .mailbox-flag { fill: #e53935; }
+          #scene-adjusted .smoke { fill: #fff; opacity: 0.5; }
+          #scene-adjusted .stone { fill: #ccc; opacity: 0.7; }
+        </style>
+        <!-- Sky -->
+        <rect class="sky" x="0" y="0" width="800" height="300" />
+        <!-- Grass -->
+        <rect class="grass" x="0" y="300" width="800" height="200" />
+
+        <!-- Sun (circle) -->
+        <circle cx="100" cy="100" r="40" fill="#ffe066" stroke="#f9d923" stroke-width="5" />
+
+        <!-- Cloud (ellipse + circles) -->
+        <ellipse cx="200" cy="90" rx="40" ry="25" fill="#fff" opacity="0.9" />
+        <circle cx="170" cy="80" r="18" fill="#fff" opacity="0.9" />
+        <circle cx="230" cy="100" r="16" fill="#fff" opacity="0.9" />
+
+        <!-- Tree group: shifted left for balance -->
+        <g transform="translate(-40,0)">
+          <rect class="tree-trunk" x="650" y="270" width="22" height="70" />
+          <ellipse class="tree-leaves" cx="661" cy="250" rx="45" ry="38" />
+        </g>
+
+        <!-- House group: shifted right for balance -->
+        <g transform="translate(30,0)">
+          <!-- House body -->
+          <rect class="house-body high-contrast" x="320" y="220" width="180" height="120" stroke="#8c2f24" />
+          <!-- Roof -->
+          <polygon class="roof high-contrast" points="310,220 410,150 510,220" stroke="#6d1b00" />
+          <!-- Chimney -->
+          <rect x="470" y="160" width="22" height="45" fill="#bfae9e" stroke="#8c2f24" stroke-width="3" />
+          <!-- Door -->
+          <rect class="door high-contrast" x="390" y="280" width="40" height="60" stroke="#8c2f24" />
+          <!-- Door knob -->
+          <circle cx="425" cy="310" r="4" fill="#8c2f24" />
+          <!-- Left window -->
+          <rect class="window high-contrast" x="340" y="250" width="36" height="36" stroke="#1976d2" />
+          <!-- Right window -->
+          <rect class="window high-contrast" x="450" y="250" width="36" height="36" stroke="#1976d2" />
+          <!-- Window panes (lines) -->
+          <line x1="358" y1="250" x2="358" y2="286" stroke="#1976d2" stroke-width="2" />
+          <line x1="340" y1="268" x2="376" y2="268" stroke="#1976d2" stroke-width="2" />
+          <line x1="468" y1="250" x2="468" y2="286" stroke="#1976d2" stroke-width="2" />
+          <line x1="450" y1="268" x2="487" y2="268" stroke="#1976d2" stroke-width="2" />
+          <!-- Chimney smoke (subtle puff, ellipses) -->
+          <ellipse class="smoke" cx="482" cy="155" rx="12" ry="7" />
+          <ellipse class="smoke" cx="490" cy="140" rx="9" ry="5" />
+          <ellipse class="smoke" cx="500" cy="130" rx="7" ry="4" />
+        </g>
+
+        <!-- Fence (polyline): improved contrast, dashed stroke -->
+        <polyline
+          class="fence"
+          points="220,370 250,330 280,370 310,330 340,370 370,330 400,370 430,330 460,370 490,330 520,370 550,330 580,370"
+          fill="none"
+        />
+
+        <!-- Fence posts (rects): improved contrast -->
+        <rect class="fence" x="218" y="367" width="6" height="40" fill="#fff" />
+        <rect class="fence" x="278" y="367" width="6" height="40" fill="#fff" />
+        <rect class="fence" x="338" y="367" width="6" height="40" fill="#fff" />
+        <rect class="fence" x="398" y="367" width="6" height="40" fill="#fff" />
+        <rect class="fence" x="458" y="367" width="6" height="40" fill="#fff" />
+        <rect class="fence" x="517" y="367" width="6" height="40" fill="#fff" />
+        <rect class="fence" x="576" y="367" width="6" height="40" fill="#fff" />
+
+        <!-- Curved garden path (original) -->
+        <path
+          d="M425,340 Q450,410 380,450"
+          fill="none"
+          stroke="#bfae9e"
+          stroke-width="10"
+          opacity="0.7"
+        />
+        <path
+          d="M395,338 Q410,410 340,450"
+          fill="none"
+          stroke="#bfae9e"
+          stroke-width="10"
+          opacity="0.7"
+        />
+
+        <!-- Curved stone footpath to door (new) -->
+        <path
+          d="M260,410 Q370,390 420,340 Q430,330 420,280"
+          fill="none"
+          stroke="#888"
+          stroke-width="14"
+          opacity="0.5"
+        />
+        <!-- Stones on path -->
+        <ellipse class="stone" cx="290" cy="405" rx="12" ry="7" />
+        <ellipse class="stone" cx="330" cy="395" rx="10" ry="6" />
+        <ellipse class="stone" cx="370" cy="385" rx="9" ry="5" />
+        <ellipse class="stone" cx="410" cy="360" rx="8" ry="5" />
+        <ellipse class="stone" cx="420" cy="320" rx="7" ry="4" />
+
+        <!-- Mailbox near path (new) -->
+        <!-- Post -->
+        <rect class="mailbox-post" x="245" y="390" width="8" height="30" />
+        <!-- Box -->
+        <rect class="mailbox-box" x="238" y="375" width="22" height="18" rx="4" />
+        <!-- Flag -->
+        <polygon class="mailbox-flag" points="258,380 263,380 263,370 258,370" />
+        <!-- Mailbox text -->
+        <text x="249" y="388" font-size="13" fill="#222" font-family="Arial,sans-serif" font-weight="bold">MAIL</text>
+
+        <!-- Caption (text) -->
+        <text x="400" y="490" text-anchor="middle" font-size="28" fill="#222" font-family="Arial, sans-serif">
+          Welcome to the House & Garden!
+        </text>
+        <!-- Figure description as overlay -->
+        <text x="400" y="30" text-anchor="middle" font-size="20" fill="#4a90e2" font-family="Arial, sans-serif">
+          Adjusted scene (Step 3)
+        </text>
+      </svg>
+    </div>
+  </figure>
 </body>
 </html>
